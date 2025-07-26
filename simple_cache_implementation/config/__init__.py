@@ -1,1 +1,1 @@
-from .redis_settings import redis_client
+from config.redis import redis_singleton, get_redis, is_redis_connected

@@ -1,9 +1,12 @@
-from services import cache
+from config import get_redis, is_redis_connected, redis_singleton
 
-if __name__ == '__main__':
-    user_id = 'akjdfu3272sdmsf92knsdfm8'
 
-cache.get_cached_data(user_id)
+def main():
+    if is_redis_connected():
+        redis_client = get_redis()
+        redis_client.set('foo', 'boo')
+        print(redis_client.get('foo'))
 
-print('Second request')
-cache.get_cached_data(user_id)
+if __name__ == "__main__":
+    main()
+    
