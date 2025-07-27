@@ -1,18 +1,10 @@
 from config import get_redis, is_redis_connected, redis_singleton
 from dotenv import load_dotenv
-import os
-from simulator import set_redis_with_mock_data_async, generate_user_dict
+from simulator import set_redis_with_mock_data_async, generate_single_user_data
 import time
-import random
-import string
 load_dotenv()
 
 redis_client = get_redis()
-
-def generate_single_user_data(user_id, id_length=8):
-    """Generate data for a specific user ID"""
-    rand_part = ''.join(random.choices(string.ascii_letters + string.digits, k=id_length))
-    return {user_id: rand_part}
 
 def main():
     if is_redis_connected():

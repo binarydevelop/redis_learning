@@ -1,1 +1,1 @@
-from config.redis import redis_singleton, get_redis, is_redis_connected
+from config.redis import redis_singleton, get_redis, get_async_redis, is_redis_connected, is_async_redis_connected
