@@ -1,6 +1,6 @@
 import time
-from helpers import generate_random_string_with_repetition
-from redis_connection import redis_client
+from simple_redis_cache.helpers import generate_random_string_with_repetition
+from simple_redis_cache.redis_connection import redis_client
 def write_op(key, value = generate_random_string_with_repetition(5)):
     response = redis_client.set(key, value, ex = 30)
     

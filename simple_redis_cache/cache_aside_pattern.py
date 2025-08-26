@@ -1,6 +1,6 @@
-from redis_connection import redis_client
+from simple_redis_cache.redis_connection import redis_client
 import time
-from helpers import generate_random_string_with_repetition
+from simple_redis_cache.helpers import generate_random_string_with_repetition
 
 while True:
     user_input = input('Enter the key to be fetched.')
