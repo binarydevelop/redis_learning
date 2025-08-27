@@ -1,5 +1,3 @@
-import string
-import uuid
 from redis_connection import redis_client
 import json
 import time 
